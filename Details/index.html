@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="flex-box">
+        <div class="left">
+            <div class="big-img">
+                <img src="Image/DSMH09700D00_1_11zon-removebg-preview.png" alt="Product Image" />
+            </div>
+            <div class="images">
+                <div class="small-img">
+                    <img src="Image/DSMH09700D00_1_11zon-removebg-preview.png" alt="Product Image 1" onclick="showImg(this.src)" />
+                </div>
+                <div class="small-img">
+                    <img src="Image/DSMH09700D00_2_11zon.png" alt="Product Image 2" onclick="showImg(this.src)" />
+                </div>
+                <div class="small-img">
+                    <img src="Image/DSMH09700D00_3_11zon.png" alt="Product Image 3" onclick="showImg(this.src)" />
+                </div>
+                <div class="small-img">
+                    <img src="Image/DSMH09700D00_4_11zon.png" alt="Product Image 4" onclick="showImg(this.src)" />
+                </div>
+            </div>
+        </div>
+
+        <div class="right">
+            <h1 class="product-name">Shoe for Men</h1>
+            <div class="ratings">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+            <div class="price">$40</div>
+            <div class="size">
+                <p>Size :</p>
+                <button class="psize active" onclick="setActiveSize(this)">M</button>
+                <button class="psize" onclick="setActiveSize(this)">L</button>
+                <button class="psize" onclick="setActiveSize(this)">XL</button>
+                <button class="psize" onclick="setActiveSize(this)">XXL</button>
+            </div>
+            <div class="quantity">
+                <p>Quantity :</p>
+                <input type="number" min="1" max="5" value="1">
+            </div>
+            <div class="btn-box">
+                <button class="cart-btn">Add to Cart</button>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    const bigImg = document.querySelector('.big-img img');
+    function showImg(pic) {
+        bigImg.src = pic;
+    }
+    function setActiveSize(button) {
+    // Remove the 'active' class from all buttons
+    document.querySelectorAll('.psize').forEach(btn => btn.classList.remove('active'));
+
+    // Add the 'active' class to the clicked button
+    button.classList.add('active');
+}
+    </script>
+</body>
+</html>
